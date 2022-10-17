@@ -1,6 +1,7 @@
-let audio = new Audio(
-  "./assets/music/Bad Meets Evil - Fast Lane (Official Audio).mp3"
-);
+let audio = new Audio("./assets/music/Bad Meets Evil - Fast Lane.mp3");
+// Creating Variables
+
+let track = document.getElementsByClassName("track");
 
 let songCollection = [
   {
@@ -45,11 +46,11 @@ masterBtn.addEventListener("click", () => {
   }
 });
 
+let prevBtn = document.getElementById("prevBtn");
+let frwdBtn = document.getElementById("frwdBtn");
+
 audio.addEventListener("timeupdate", () => {
   console.log("timeupdate");
   let p = parseInt((audio.currentTime / audio.duration) * 100);
   seekBar.value = p;
 });
-
-document.getElementById("song-title").innerText = songCollection[0].songName;
-document.getElementById("cover-image").src = songCollection[0].coverImage;
