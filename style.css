@@ -9,16 +9,8 @@
 }
 
 body {
-  background-color: #fbfbfd;
+  /* background-color: #fbfbfd; */
   background-color: #1f1f1f;
-  /* background: url(https://media.tenor.com/r7LADqyXxkcAAAAC/music.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #000;
-  background-size: 30%;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  z-index: -1; */
   overflow: hidden;
 }
 
@@ -27,10 +19,13 @@ body {
   align-items: center;
 }
 
+.logo img {
+  border-radius: 50%;
+}
+
 .logo-txt {
   font-weight: 600;
   font-size: 20px;
-  margin-left: 10px;
 }
 
 nav {
@@ -62,13 +57,20 @@ nav button {
   border: none;
 }
 
-main {
-  padding: 30px 200px;
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.cover-img {
-  width: 450px;
-  /* border-radius: 10px; */
+main {
+  padding: 30px 200px;
+  height: 70vh;
+}
+
+#current-cover-img {
+  width: 420px;
+  border-radius: 8px;
 }
 
 .main-content {
@@ -89,6 +91,7 @@ main {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+  justify-content: space-evenly;
   width: 50%;
 }
 
@@ -155,6 +158,16 @@ input {
   align-items: center;
 }
 
-.current-song-name {
+.current-song-desc p {
+  max-width: 260px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#current-song-name {
   font-weight: 500;
 }
+
+/* Responsive Design */
