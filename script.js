@@ -67,12 +67,20 @@ track.forEach((e, i) => {
     songCollection[i].coverImage;
 });
 
+function pauseAll() {
+  playSong.forEach((element) => {
+    element.classList.remove("fa-circle-pause");
+    element.classList.add("fa-circle-play");
+  });
+}
+
 playSong.forEach((e) => {
   e.addEventListener("click", () => {
     id = e.id;
     audio.src = songCollection[id].filePath;
 
     if (e.classList.contains("fa-circle-play")) {
+      pauseAll();
       currentCover.src = songCollection[id].coverImage;
       audio.play();
       e.classList.add("fa-circle-pause");
@@ -80,7 +88,7 @@ playSong.forEach((e) => {
       currentSongDesc.innerText = songCollection[id].songName;
       masterBtn.classList.remove("fa-play");
       masterBtn.classList.add("fa-pause");
-      artistName.innerText = " - " + songCollection[id].artist;
+      // artistName.innerText = " - " + songCollection[id].artist;
     } else {
       audio.pause();
       e.classList.remove("fa-circle-pause");

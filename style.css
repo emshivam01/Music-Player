@@ -11,7 +11,6 @@
 body {
   /* background-color: #fbfbfd; */
   background-color: #1f1f1f;
-  overflow: hidden;
 }
 
 .logo {
@@ -34,6 +33,10 @@ nav {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+}
+
+.addSong {
+  display: none;
 }
 
 nav a {
@@ -159,7 +162,9 @@ input {
 }
 
 .current-song-desc p {
-  max-width: 260px;
+  /* border: 2px solid white; */
+  width: 220px;
+
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -171,3 +176,111 @@ input {
 }
 
 /* Responsive Design */
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 8 px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  .addSong {
+    display: block;
+  }
+
+  .main {
+    /* border: 2px solid white; */
+    padding: 0px;
+    margin-top: 40px;
+    gap: 40px;
+  }
+
+  main {
+    /* border: 2px solid white; */
+    height: auto;
+    padding: 0px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .items,
+  .signIn-btn {
+    display: none;
+  }
+
+  .addSong img {
+    margin-top: 5px;
+    width: 22px;
+  }
+
+  #current-cover-img {
+    width: 300px;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .songs-list {
+    display: none;
+  }
+
+  /* --------------- */
+
+  input {
+    width: 60%;
+    height: 3px;
+  }
+
+  .bottom {
+    position: initial;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .controls {
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0px;
+  }
+
+  .currently-playing {
+    /* border: 2px solid white; */
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .extra-control {
+    display: none;
+  }
+
+  .current-song-desc p {
+    max-width: 260px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #current-song-name {
+    font-weight: 500;
+  }
+
+  .current-song-desc {
+    display: none;
+  }
+}
